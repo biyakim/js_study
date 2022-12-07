@@ -1,0 +1,32 @@
+<script>
+    function Shape(x,y){
+        this.x = x;
+        this.y = y;
+    }
+
+    Shape.prototype.move = function(x,y){
+        console.log(`Shape moved from ${this,x}, ${this,y} to ${x}, ${y}`);
+        this.x+=x;
+        this.y+=y;
+    }
+
+    function Rectangle(x,y,w,h){
+        Shape.call(this,x,y);
+        this.w = w;
+        this.h = h;
+    }
+
+    Rectangle.prototype = Object.create(Shape.prototype);
+
+    Rectangle.prototype.constructor = Rectangle;
+
+    Rectangle.prototype.size = function(){
+        return this.w * this.h;
+    }
+
+    let rect = new Rectangle(0,0,20,10);
+
+    rect.move(5,5);
+
+    console.log(rect.size());
+</script>
