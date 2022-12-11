@@ -1,0 +1,13 @@
+<script>
+
+    //함수 선언식으로 함수를 정의하나
+    function hello() {};
+
+    //함수 선언식으로 함수를 정의하나 모두 prototype 속성을 갖게 됨 (prototype 속성에 저장된 값은 객체이며 해당 객체는 constructor라는 속성을 가지고 있음)
+    let world = function () {};
+
+    console.log(hello.prototype); // {constructor : hello}
+    console.log(hello.prototype.constructor === hello); // true
+    console.log(world.prototype); // {constructor : world}
+    console.log(world.prototype.constructor === world); // true
+</script>
