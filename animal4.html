@@ -1,0 +1,19 @@
+<script>
+    function Animal(name,age){
+        //new 키워드와 함께 생성자 함수가 호출될 경우, 마치 아래 코드와 같은 작업을 자동으로 해주게 됨
+        //Object.setPrototypeOf(this,Animal.Prototype);
+
+        this.name = name;
+        this.age = age;
+    };
+
+    let sam = new Animal("Sam",2);
+    console.log(sam.__proto__); // {constructor : Animal};
+    console.log(sam.__proto__ === Animal.prototype) // true
+    console.log(sam.__proto__.constructor === Animal) // true
+
+    //sam._proto__.constructor는 Animal 생성자 함수를 가리키므로 다음과 같이 활용 가능 (권장은 아님)
+    let boksun = new sam.__proto__.constructor("Boksun",1);
+    console.log(boksun.__proto__ === Animal.prototype); //true
+
+</script>
