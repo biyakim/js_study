@@ -1,0 +1,36 @@
+<script>
+    let animal = {
+        eat : function(food) {
+            console.log(`${food}를 먹습니다`);
+        }
+    };
+    let human = {
+        eat : function(food) {
+            console.log(`${food}를 즐겁게 먹습니다`);
+        },
+        talk : function() {
+            console.log("대화를 합니다");
+        }
+    };
+    let superhuman = {
+        eat : function(food){
+            console.log(`${food}를 흡수하여 먹습니다`);
+        },
+        talk : function(){
+            console.log("텔레파시를 통해서 대호합니다");
+        },
+        fly : function(){
+            console.log("날아다닙니다");
+        }
+    };
+
+    human.__proto__ = animal;
+    superhuman.__proto__ = human;
+
+    // 객체에 해당 메소드(eat)가 이미 정의되어 있으므로, 프로토타입 체인 및 객체(animal) 접근 불필요
+    human.eat("밥");
+
+    // 객체에 해당 메소드(eat,talk)가 이미 정의 되어 있으므로, 프로토타입 체인 및 (human) 접근 불필요
+    superhuman.eat("간식");
+    superhuman.talk();
+</script>
