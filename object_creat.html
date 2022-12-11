@@ -1,0 +1,24 @@
+<script>
+    let animal = {
+        eat : function(food) {
+            console.log(`${food}를(을) 먹습니다`);
+        }
+    };
+
+    // Object.create 메서드를 호출하면 호출 시 전달한 객체를 [[Prototype]] 객체로 사용하는 빈 객체를 생성하며 반환함    
+    let human = Object.create(animal);
+    //비어있는 객체
+    console.log(human); // { }
+    //그러나 __proto__는 Object.creat 메서드로 전달한 객체로 설정되어있는 것을 확인 가능
+    console.log(human.__proto__); // {eat : f}
+    human.talk = function(){
+        console.log("대화를 합니다");
+    }; //이후 human 객체의 모습은 다음과 같음
+       // {talk : f, __proto__: {eat : f}}
+
+    //객체에 eat 메서드가 없으므로 프로토타입 체인 검색 후 프로토타입 객체(animal)에 접근하여 eat메서드 호출
+    human.eat("밥");//밥를(을)먹습니다
+    //객체에 정의한 고유 메서드이므로 프로토타입 체인 검색 없이 바로 호출
+    human.talk(); // 대화를 합니다.
+    
+</script>
