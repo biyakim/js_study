@@ -1,0 +1,18 @@
+<script>
+    function Animal(name,age){
+        this.name = name;
+        this.age = age;
+    };
+
+    Animal.prototype.eat = function(food){
+        console.log(`${this.name}이 ${food}를 먹습니다`);
+    };
+
+    let sam = new Animal("Sam",2);
+    let boksun = new Animal("boksun", 1);
+
+    //eat 메서드 내부에서 this는 Sam
+    sam.eat("사료"); //Sam이 사료를 먹습니다
+    //eat 메서드 내부에서 this는 boksun
+    boksun.eat("고급 사료"); //boksun이 고급 사료를 먹습니다
+</script>
