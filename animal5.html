@@ -1,0 +1,29 @@
+<script>
+    function Animal(name,age){
+        this.name = name;
+        this.age = age;
+    };
+
+    // 공통적으로 사용할 속성 혹은 메서드 정의 (보통은 속성보다는 메서드만 정의함)
+    Animal.prototype.isAnimal = true;
+    Animal.prototype.eat = function(food) {
+        console.log(`${food}를 먹습니다`);
+    };
+
+    let sam = new Animal("Sam", 2);
+    let boksun = new Animal("boksun", 1);
+
+    //프로토타입 체인을 따라가 Animal.prototype에 정의된 속성과 메서드에 접근하게 됨
+    console.log(sam.isAnimal); // true
+    console.log(boksun.isAnimal); //true
+    sam.eat("사료"); // 사료를 먹습니다
+    boksun.eat("고급 사료"); // 고급 사료를 먹습니다
+
+    //객체에 직접 메서드 정의
+    boksun.eat = function(food){
+        console.log(`${food}를 복스럽게 먹습니다`);
+    };
+
+    // 이후에는 해당 객체(boksun)에서 직접적을 메서드(eat)에 접근할 수 있으므로, 프로토타입 체인을 검색하지 않고 프로토타입 객체(Animal.prototype)에도 접근하지 않음
+    boksun.eat("고급 사료"); //고급 사료를 복스럽게 먹습니다
+</script>
