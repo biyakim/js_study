@@ -1,0 +1,18 @@
+<script>
+    class Button {
+        constructor(value){
+            this.value = value;
+        }
+        click(){
+            alert(this.value);
+        }
+    }
+
+    let button = new Button("hello");
+
+
+    // 메서드 전달 (단, 메서드가 전달되어 콜백 함수에서 호출되므로 함수가 호출되는 시점에는 this 맥락(점 앞 객체)를 읽게 됨)
+   setTimeout(button.click, 1000); //undefined
+
+    
+</script>
