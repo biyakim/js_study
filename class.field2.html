@@ -1,0 +1,16 @@
+<script>
+    class User {
+        // prop1 ,prop2 속성은 클래스 필드 방식으로 정의
+        prop1 = "prop1"
+        prop2 = 1234;
+
+        constructor(prop3){
+            this.prop3 = prop3;
+        }
+    }
+
+    let mc = new User({hello : "world"});
+    console.log(mc.prop1); // prop1
+    console.log(mc.prop2); // 1234
+    console.log(mc.prop3); // {hello : "world"}
+</script>
