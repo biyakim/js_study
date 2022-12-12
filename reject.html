@@ -1,6 +1,6 @@
 <script>
-    let promise = new Promise(function(resolve,reject){
-        setTimeout(() => reject(new Error("에러 발생")),1000);
+    let promise = new Promise(function(resolve,reject) {
+        setTimeout(() => reject(new Error("error!"),1000))
     });
 
     //reject 함수는 then의 두 번째 함수를 실행

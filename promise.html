@@ -1,0 +1,18 @@
+<script>
+    let promise = new Promise(function(resolve,reject){
+        setTimeout(()=> {
+            let success = Math.random() + .5 >> 0;
+
+            if(success){
+                resolve({result : "hello"});
+            }else{
+                reject(new Error("실패"));
+            }
+        }, 1000);
+    });
+
+    promise.then(
+        result => alert(JSON.stringify(result)),
+        error => alert(error)
+    );
+</script>

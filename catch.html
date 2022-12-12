@@ -1,5 +1,5 @@
 <script>
-    let promise = new Promise(function(resolve,reject){
+    let promise = new Promise((resolve,reject) => {
         setTimeout(() => reject(new Error("에러 발생")),1000)
     });
 
