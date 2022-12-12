@@ -1,0 +1,13 @@
+<script>
+    class User{
+        name = "John";
+    }
+
+    let user = new User();
+
+    // 개별 객체에 name 속성이 추가됨
+    console.log(user.name); // "John"
+
+    // prototpye에 추가되어 공통적으로 사용할 속성이 되는 것이 아님을 유의!
+    console.log(User.prototype.name); // undefined
+</script>
