@@ -1,0 +1,28 @@
+<script>
+    class Button {
+        constructor(value) {
+            this.value = value;
+        }
+        click = () => {
+            alert(this.value)
+        }
+        nonBinded(){
+            alert(this.value)
+        }
+    }
+
+    let button1 = new Button("hello");
+
+    //화살표 함수로 메서드를 정의 하였기 때문에 가능하다
+    setTimeout(button1.click, 1000) //hello
+
+    let button2 = new Button("Hello");
+
+    console.log(button1.click === button2.click); //false
+
+    console.log(button1.nonBinded === button2.nonBinded)// true
+
+    console.log(Button.prototype.click)
+
+    console.log(Button.prototype.nonBinded)
+</script>
