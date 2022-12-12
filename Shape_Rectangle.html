@@ -26,7 +26,13 @@
 
     let rect = new Rectangle(0,0,20,10);
 
-    rect.move(5,5);
+    console.log(rect.move(5,5));
 
     console.log(rect.size());
+
+    console.log(Shape.prototype);
+
+    console.log(Shape.prototype.__proto__);
+
+    console.log(Shape.prototype.__proto__ === Object.prototype);
 </script>
