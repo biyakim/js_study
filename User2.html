@@ -1,0 +1,16 @@
+<script>
+    class User {
+        constructor(name){
+            this.name = name;
+        }
+        sayHi(){
+            alert(this.name);
+        }
+    }
+
+    // User는 함수
+    console.log(typeof User); // function
+
+    // User.prototype에 sayHi 함수가 정의되어 있는 것을 확인 가능
+    console.log(User.prototype); // {constructor : User, sayHi : f}
+</script>
